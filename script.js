@@ -13,8 +13,8 @@ $("#currentDay").text(
 
 // using local storage to save appointment information
 
-$("#save_1").on("click", function () {
-  var appointment = $("#1").val().trim();
+$(".saveBtn").on("click", function () {
+  var appointment = $(this).siblings(".description").val();
 
   console.log(appointment);
 
