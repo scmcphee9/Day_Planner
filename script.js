@@ -18,7 +18,7 @@ $(".saveBtn").on("click", function () {
 
   console.log(appointment);
 
-  var time = $(this).parent("id");
+  var time = $(this).parent().attr("id");
 
   localStorage.setItem(time, appointment);
   console.log(time);
@@ -27,5 +27,13 @@ $(".saveBtn").on("click", function () {
 // var savedAppointment = localStorage.getItem("hour_9");
 
 // $("#1").append(savedAppointment);
+var timeOfDay = [9, 10, 11, 12, 1, 2, 3, 4, 5];
 
-$("#hour_9 .description").val(localStorage.getItem("hour_9"));
+for (var i = 0; i < timeOfDay.length; i++) {
+  var firstTime = 0;
+  var secondTime = 1;
+
+  $(`#hour_${timeOfDay[i]} .description`).val(
+    localStorage.getItem(`hour_${timeOfDay[i]}`)
+  );
+}
