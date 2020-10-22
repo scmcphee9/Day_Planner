@@ -10,3 +10,22 @@ var dow = "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday".split
 $("#currentDay").text(
   dow[date.getDay()] + ", " + month[date.getMonth()] + " " + date.getDate()
 );
+
+// using local storage to save appointment information
+
+$("#save_1").on("click", function () {
+  var appointment = $("#1").val().trim();
+
+  console.log(appointment);
+
+  var time = $(this).parent("id");
+
+  localStorage.setItem(time, appointment);
+  console.log(time);
+});
+
+// var savedAppointment = localStorage.getItem("hour_9");
+
+// $("#1").append(savedAppointment);
+
+$("#hour_9 .description").val(localStorage.getItem("hour_9"));
