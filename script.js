@@ -28,6 +28,7 @@ $(".saveBtn").on("click", function () {
 
 var timeOfDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
+// for loop to iterate through the time of day and retrieve local storage for each appropriate time, also changes colors of blocks further down
 for (var i = 0; i < timeOfDay.length; i++) {
   $(`#hour_${timeOfDay[i]} .description`).val(
     localStorage.getItem(`hour_${timeOfDay[i]}`)
@@ -37,7 +38,7 @@ for (var i = 0; i < timeOfDay.length; i++) {
   var realTime = date.getHours();
 
   // Use this to add or subtract time if you are outside the time displayed
-  // realTime = realTime;
+  // realTime = realTime +4;
   // console.log(typeof realTime);
 
   // If statements read actual time and compare to time blocks
