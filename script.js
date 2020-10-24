@@ -27,13 +27,34 @@ $(".saveBtn").on("click", function () {
 // var savedAppointment = localStorage.getItem("hour_9");
 
 // $("#1").append(savedAppointment);
-var timeOfDay = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+var timeOfDay = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 for (var i = 0; i < timeOfDay.length; i++) {
-  var firstTime = 0;
-  var secondTime = 1;
+  // var firstTime = 0;
+  // var secondTime = 1;
 
   $(`#hour_${timeOfDay[i]} .description`).val(
     localStorage.getItem(`hour_${timeOfDay[i]}`)
   );
+
+  // This will display the hour of the day
+  var realTime = date.getHours();
+
+  // Use this to add or subtract time if you are outside the time displayed
+  // realTime = realTime;
+  // console.log(typeof realTime);
+
+  // If statements read actual time and compare to time blocks
+  // if in the past text box turns gray
+  // if the present time, turn text box red
+  // if in the future, turn text box green
+  if (realTime === timeOfDay[i]) {
+    $(`#textTime_${timeOfDay[i]}`).addClass("present");
+  }
+  if (realTime < timeOfDay[i]) {
+    $(`#textTime_${timeOfDay[i]}`).addClass("future");
+  }
+  if (realTime > timeOfDay[i]) {
+    $(`#textTime_${timeOfDay[i]}`).addClass("past");
+  }
 }
