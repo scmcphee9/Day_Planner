@@ -34,11 +34,11 @@ for (var i = 0; i < timeOfDay.length; i++) {
     localStorage.getItem(`hour_${timeOfDay[i]}`)
   );
 
-  // This will display the hour of the day
+  // This sets the variable to the hour of the day
   var realTime = date.getHours();
 
   // Use this to add or subtract time if you are outside the time displayed
-  // realTime = realTime +4;
+  // realTime = realTime + 4;
   // console.log(typeof realTime);
 
   // If statements read actual time and compare to time blocks
